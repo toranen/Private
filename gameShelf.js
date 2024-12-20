@@ -68,6 +68,18 @@ class gameStore {
                 this.#multiplayer = this.#shelf.multiplayer;
                 return this.toString(this.#shelf);
             }
+            case "Terraria":{
+                const newGame = gameStore.gameShelf[shelf];
+                this.#shelf = newGame
+                this.#multiplayer = this.#shelf.multiplayer;
+                return this.toString(this.#shelf);
+            }
+            case "Xcom2":{
+                const newGame = gameStore.gameShelf[shelf];
+                this.#shelf = newGame
+                this.#multiplayer = this.#shelf.multiplayer;
+                return this.toString(this.#shelf);
+            }
         }
     }
 
@@ -86,4 +98,6 @@ class gameStore {
 }
 
 const gameCheck = new gameStore();
+//gameCheck.selectGame("RocketLeague")
+//gameCheck.selectGame("Xcom2")
 gameCheck.runThrough(0)
