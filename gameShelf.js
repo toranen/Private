@@ -5,9 +5,7 @@ initPrintOut(document.getElementById("txtOut"));
 //-----------------------------------
 
 class gameStore {
-    #game
     #shelf
-    #price
     #multiplayer
 
     static gameShelf = {
@@ -19,10 +17,8 @@ class gameStore {
         list: ["RocketLeague", "Fortnite", "Minecraft", "Terraria", "Xcom2"],
     }
 
-    constructor (game, gameShelf, price, multiplayer){
-        this.#game = game || 0;
+    constructor (gameShelf, multiplayer){
         this.#shelf = gameShelf;
-        this.#price = price || 0;
         this.#multiplayer = multiplayer || 0;
     }
 
@@ -83,9 +79,9 @@ class gameStore {
         }
     }
 
-    runThrough(count){
+    runThrough(count = 0){
         const gameLoop = gameStore.gameShelf["list"];
-        
+
         while (count < gameLoop.length){
             const newGame = gameLoop[count];
             const shelf = gameStore.gameShelf[newGame];
@@ -100,4 +96,4 @@ class gameStore {
 const gameCheck = new gameStore();
 //gameCheck.selectGame("RocketLeague")
 //gameCheck.selectGame("Xcom2")
-gameCheck.runThrough(0)
+gameCheck.runThrough();
